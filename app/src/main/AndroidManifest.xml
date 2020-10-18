@@ -9,13 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GrammarEngPro">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.sample.SampleActivity" />
+        <activity
+            android:name=".ui.splash.SplashScreenActivity"
+            android:theme="@style/Theme_Splash_Screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.main.MainActivity" />
     </application>
 
 </manifest>
