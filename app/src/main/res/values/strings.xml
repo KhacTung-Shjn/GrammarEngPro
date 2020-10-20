@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">GrammarEngPro</string>
+    <string name="label_grammar">Grammar</string>
+    <string name="label_practice">Practice</string>
+    <string name="label_notebook">Notebook</string>
+    <string name="label_more">More</string>
+    <string name="title_grammar">Grammar</string>
+    <string name="title_practice">Practice</string>
+    <string name="title_notebook">Notebook</string>
+    <string name="title_more">More</string>
 </resources>

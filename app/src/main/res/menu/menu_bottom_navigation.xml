@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuGrammar"
+        android:icon="@drawable/ic_grammar"
+        android:title="@string/label_grammar" />
+    <item
+        android:id="@+id/menuPractice"
+        android:icon="@drawable/ic_practice"
+        android:title="@string/label_practice" />
+
+    <item
+        android:id="@+id/menuNotebook"
+        android:icon="@drawable/ic_notebook"
+        android:title="@string/label_notebook" />
+
+    <item
+        android:id="@+id/menuMore"
+        android:icon="@drawable/ic_more"
+        android:title="@string/label_more" />
+
+</menu>
