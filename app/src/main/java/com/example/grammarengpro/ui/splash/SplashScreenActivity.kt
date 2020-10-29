@@ -15,6 +15,7 @@ class SplashScreenActivity : AppCompatActivity() {
         Looper.myLooper()?.let {
             Handler(it).postDelayed({
                 startActivity(Intent(baseContext, MainActivity::class.java))
+                finish()
             }, 1000)
         }
     }

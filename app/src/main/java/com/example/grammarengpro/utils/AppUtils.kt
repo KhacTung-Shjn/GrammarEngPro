@@ -41,4 +41,19 @@ object AppUtils {
         fragmentTransaction.commit()
         return mustActiveFragment
     }
+
+    fun replaceFragment(
+        fragmentManager: FragmentManager,
+        frameMain: Int,
+        fragment: Fragment?,
+        isBackStack: Boolean,
+        TAG: String?
+    ) {
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(frameMain, fragment!!, TAG)
+        if (isBackStack) {
+            fragmentTransaction.addToBackStack(TAG)
+        }
+        fragmentTransaction.commit()
+    }
 }

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1025235366727",
+    "firebase_url": "https://grammarengpro.firebaseio.com",
+    "project_id": "grammarengpro",
+    "storage_bucket": "grammarengpro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025235366727:android:edf5f609b22b66306e1262",
+        "android_client_info": {
+          "package_name": "com.example.grammarengpro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1025235366727-qldckh1c0dvorma5je1kks371b13ks70.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.grammarengpro",
+            "certificate_hash": "06ace10237ca8cbbd278f0620176333a8ac3847d"
+          }
+        },
+        {
+          "client_id": "1025235366727-0ojtb55926tdibqh7vi7jsavca1qdkds.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDucpammWmUv0TmUC6IcoecCfRNasgYRfs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1025235366727-0ojtb55926tdibqh7vi7jsavca1qdkds.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,12 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.example.grammarengpro.R
 import com.example.grammarengpro.base.BaseFragment
+import com.example.grammarengpro.base.OnItemClick
+import com.example.grammarengpro.data.model.Grammar
+import com.example.grammarengpro.ui.frame.FrameActivity
 
-class GrammarFragment : BaseFragment(), GrammarFragmentContact.View {
+class GrammarFragment : BaseFragment(), GrammarFragmentContact.View, OnItemClick<Grammar> {
 
     private var grammarFragmentPresenter: GrammarFragmentPresenter? = null
+    private var rcvListGrammar: RecyclerView? = null
+    private var grammarAdapter: GrammarAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +31,9 @@ class GrammarFragment : BaseFragment(), GrammarFragmentContact.View {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        rcvListGrammar = view.findViewById(R.id.rcvListGrammar)
+        rcvListGrammar?.setHasFixedSize(true)
+        grammarFragmentPresenter?.loadListGrammar()
     }
 
     override fun initPresenter() {
@@ -38,6 +47,19 @@ class GrammarFragment : BaseFragment(), GrammarFragmentContact.View {
             instance ?: synchronized(this) {
                 instance ?: GrammarFragment().also { instance = it }
             }
+    }
+
+    override fun successGetListGrammar(listGrammar: MutableList<Grammar>) {
+        listGrammar.let { listGrammar.reverse() }
+        grammarAdapter = GrammarAdapter(listGrammar, context!!)
+        grammarAdapter?.setOnClickItem(this)
+        rcvListGrammar?.adapter = grammarAdapter
+    }
+
+    override fun onClickItem(t: Grammar) {
+        context?.let {
+            startActivity(FrameActivity.newInstanceDetailGrammar(it, t))
+        }
     }
 
 }

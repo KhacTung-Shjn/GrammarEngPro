@@ -8,4 +8,14 @@
     <string name="title_practice">Practice</string>
     <string name="title_notebook">Notebook</string>
     <string name="title_more">More</string>
+    <string name="label_translate">Translate</string>
+    <string name="title_translate">Translate</string>
+    <string name="hint_enter_word">Enter text</string>
+    <string name="msg_get_list_grammar_empty">List Grammar Empty !</string>
+    <string name="title_detail_grammar">Detail Grammar</string>
+    <string name="msg_get_list_struct_empty">List Struct Empty !</string>
+    <string name="msg_get_list_detail_empty">List Detail Empty !</string>
+    <string name="title_detail"><b>Detail: </b></string>
+    <string name="title_example"><b>Example: </b></string>
+    <string name="title_note"><b>Note: </b></string>
 </resources>

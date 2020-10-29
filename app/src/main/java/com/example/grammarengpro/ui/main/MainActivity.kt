@@ -11,6 +11,7 @@ import com.example.grammarengpro.ui.grammar.GrammarFragment
 import com.example.grammarengpro.ui.more.MoreFragment
 import com.example.grammarengpro.ui.notebook.NotebookFragment
 import com.example.grammarengpro.ui.practice.PracticeFragment
+import com.example.grammarengpro.ui.translate.TranslateFragment
 import com.example.grammarengpro.utils.AppUtils
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -42,6 +43,12 @@ class MainActivity : BaseActivity(), MainContact.View,
             FragmentController(
                 GrammarFragment.getInstance(),
                 GrammarFragment.TAG
+            )
+        )
+        listFragmentController.add(
+            FragmentController(
+                TranslateFragment.getInstance(),
+                TranslateFragment.TAG
             )
         )
         listFragmentController.add(
@@ -79,16 +86,20 @@ class MainActivity : BaseActivity(), MainContact.View,
                 maybeActive = 0
                 title = getString(R.string.title_grammar)
             }
-            R.id.menuPractice -> {
+            R.id.menuTranslate -> {
                 maybeActive = 1
+                title = getString(R.string.title_translate)
+            }
+            R.id.menuPractice -> {
+                maybeActive = 2
                 title = getString(R.string.title_practice)
             }
             R.id.menuNotebook -> {
-                maybeActive = 2
+                maybeActive = 3
                 title = getString(R.string.title_notebook)
             }
             R.id.menuMore -> {
-                maybeActive = 3
+                maybeActive = 4
                 title = getString(R.string.title_more)
             }
         }

@@ -5,6 +5,10 @@
         android:icon="@drawable/ic_grammar"
         android:title="@string/label_grammar" />
     <item
+        android:id="@+id/menuTranslate"
+        android:icon="@drawable/ic_translate"
+        android:title="@string/label_translate" />
+    <item
         android:id="@+id/menuPractice"
         android:icon="@drawable/ic_practice"
         android:title="@string/label_practice" />
