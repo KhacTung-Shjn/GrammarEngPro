@@ -17,6 +17,7 @@ class MainApp : Application() {
         val TAG: String = MainApp::class.java.simpleName
         private var instance: MainApp? = null
         private var firebaseFirestore: FirebaseFirestore? = null
+
         fun getInstance(): MainApp = instance ?: synchronized(this) {
             instance ?: MainApp().also { instance = it }
         }

@@ -1,40 +1,43 @@
-package com.example.grammarengpro.ui.practice
+package com.example.grammarengpro.ui.detail_practice
 
 import android.util.Log
 import com.example.grammarengpro.MainApp
 import com.example.grammarengpro.R
+import com.example.grammarengpro.data.model.DetailExam
 import com.example.grammarengpro.data.model.Practice
 import com.google.firebase.firestore.Query
 import com.google.gson.Gson
 
-class PracticeFragmentPresenter(val view: PracticeFragmentContact.View) :
-    PracticeFragmentContact.Presenter {
-    override fun getListPractice() {
+class DetailPracticeFragmentPresenter(val view: DetailPracticeFragmentContact.View) :
+    DetailPracticeFragmentContact.Presenter {
+    override fun getListQuestion(idPractice: String?) {
         MainApp.getFirebaseFireStore()
             .collection("Exam")
+            .document(idPractice!!)
+            .collection("Detail")
             .orderBy("timeCreate", Query.Direction.DESCENDING)
             .addSnapshotListener { value, error ->
                 error?.let {
                     Log.d(
-                        PracticeFragmentPresenter::class.java.simpleName,
+                        DetailPracticeFragmentPresenter::class.java.simpleName,
                         "Listen failed.",
                         error
                     )
                     return@addSnapshotListener
                 }
                 value?.let { items ->
-                    val listPractice = mutableListOf<Practice>()
+                    val listExam = mutableListOf<DetailExam>()
                     for (item in items) {
                         val json = Gson().toJson(item.data)
                         if (json != null) {
-                            val practice = Gson().fromJson(json, Practice::class.java)
-                            listPractice.add(practice)
+                            val exam = Gson().fromJson(json, DetailExam::class.java)
+                            listExam.add(exam)
                         }
                     }
-                    if (listPractice.size != 0) {
-                        view.successGetListPractice(listPractice)
+                    if (listExam.size != 0) {
+                        view.successGetListExam(listExam)
                     } else {
-                        view.showMessage(R.string.msg_get_list_practice_empty)
+                        view.showMessage(R.string.msg_get_list_detail_practice_empty)
                     }
                 }
             }

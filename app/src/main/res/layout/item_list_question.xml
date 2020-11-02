@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/dp_16"
+    tools:ignore="HardcodedText">
+
+    <TextView
+        android:id="@+id/textTitleQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_question"
+        android:textSize="@dimen/sp_24"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textNumberQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="@dimen/sp_24"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textTitleQuestion"
+        app:layout_constraintTop_toTopOf="@+id/textTitleQuestion" />
+
+    <TextView
+        android:id="@+id/textContentQuestion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        android:text="She’s always talking --------- the phone."
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitleQuestion" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textContentQuestion">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textAnswerOne"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/bg_answer"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/dp_16"
+                android:text="in"
+                android:textSize="@dimen/sp_20"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/textAnswerTwo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="@drawable/bg_answer"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/dp_16"
+                android:text="at"
+                android:textSize="@dimen/sp_20"
+                app:layout_constraintTop_toBottomOf="@+id/textAnswerOne"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/textAnswerThree"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="@drawable/bg_answer"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/dp_16"
+                android:text="form"
+                android:textSize="@dimen/sp_20"
+                app:layout_constraintTop_toBottomOf="@+id/textAnswerTwo"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/textAnswerFour"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="@drawable/bg_answer"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/dp_16"
+                android:text="on"
+                android:textSize="@dimen/sp_20"
+                app:layout_constraintTop_toBottomOf="@+id/textAnswerThree"
+                tools:ignore="RtlSymmetry" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

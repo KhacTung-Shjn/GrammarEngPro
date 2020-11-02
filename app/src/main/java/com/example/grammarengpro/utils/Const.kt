@@ -3,5 +3,19 @@ package com.example.grammarengpro.utils
 object Const {
     const val DIRECT_VERIFY = "DIRECT_VERIFY"
     const val DIRECT_DETAIL_GRAMMAR = "DIRECT_DETAIL_GRAMMAR"
+    const val DIRECT_DETAIL_PRACTICE = "DIRECT_DETAIL_PRACTICE"
+
     const val KEY_GRAMMAR = "BUNDLE_GRAMMAR"
+    const val KEY_QUESTION = "KEY_QUESTION"
+    const val KEY_POSITION_QUESTION = "KEY_POSITION_QUESTION"
+    const val KEY_ID_PRACTICE = "KEY_ID_PRACTICE"
+    const val KEY_POINT_PRACTICE = "KEY_POINT_PRACTICE"
+
+    const val PREFS_LIST_POINT_PRACTICE = "PREFS_LIST_POINT_PRACTICE"
+
+    const val ACTION_SWIPE_QUESTION = "ACTION_SWIPE_QUESTION"
+
+    const val REQUEST_PRACTICE = 10
+
+
 }
