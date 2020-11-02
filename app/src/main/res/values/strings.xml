@@ -27,4 +27,8 @@
     <string name="label_exit_exam">Do you want exit exam ?</string>
     <string name="label_yes">Yes</string>
     <string name="label_no">No</string>
+    <string name="label_download_translate">This is your first translation, please download the language pack</string>
+    <string name="label_download">Download...</string>
+    <string name="label_download_success">Download Success !</string>
+    <string name="label_result">Result</string>
 </resources>
