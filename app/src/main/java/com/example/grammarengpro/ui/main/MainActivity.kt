@@ -2,6 +2,7 @@ package com.example.grammarengpro.ui.main
 
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.grammarengpro.R
@@ -14,6 +15,7 @@ import com.example.grammarengpro.ui.practice.PracticeFragment
 import com.example.grammarengpro.ui.translate.TranslateFragment
 import com.example.grammarengpro.utils.AppUtils
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity(), MainContact.View,
     BottomNavigationView.OnNavigationItemSelectedListener {
@@ -83,22 +85,27 @@ class MainActivity : BaseActivity(), MainContact.View,
         var title = ""
         when (item.itemId) {
             R.id.menuGrammar -> {
+                imageAdd.visibility = View.INVISIBLE
                 maybeActive = 0
                 title = getString(R.string.title_grammar)
             }
             R.id.menuTranslate -> {
+                imageAdd.visibility = View.INVISIBLE
                 maybeActive = 1
                 title = getString(R.string.title_translate)
             }
             R.id.menuPractice -> {
+                imageAdd.visibility = View.INVISIBLE
                 maybeActive = 2
                 title = getString(R.string.title_practice)
             }
             R.id.menuNotebook -> {
+                imageAdd.visibility = View.VISIBLE
                 maybeActive = 3
                 title = getString(R.string.title_notebook)
             }
             R.id.menuMore -> {
+                imageAdd.visibility = View.INVISIBLE
                 maybeActive = 4
                 title = getString(R.string.title_more)
             }

@@ -31,4 +31,10 @@
     <string name="label_download">Download...</string>
     <string name="label_download_success">Download Success !</string>
     <string name="label_result">Result</string>
+    <string name="msg_get_list_note_empty">List Note Empty !</string>
+    <string name="hint_title_note">Title Note</string>
+    <string name="label_add">Add</string>
+    <string name="hint_content_note">Content Note</string>
+    <string name="msg_empty_content">Please enter title</string>
+    <string name="msg_remove_success">Remove Success !</string>
 </resources>

@@ -3,6 +3,7 @@
     package="com.example.grammarengpro">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GrammarEngPro">
-        <activity android:name=".ui.frame.FrameActivity"/>
+        <activity android:name=".ui.frame.FrameActivity" />
         <activity android:name=".ui.sample.SampleActivity" />
         <activity
             android:name=".ui.splash.SplashScreenActivity"
