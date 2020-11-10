@@ -37,4 +37,14 @@
     <string name="hint_content_note">Content Note</string>
     <string name="msg_empty_content">Please enter title</string>
     <string name="msg_remove_success">Remove Success !</string>
+    <string name="title_schedule_free">Choose Your Schedule Free</string>
+    <string name="label_recommend">Recommend</string>
+    <string name="title_choose_time">Choose time: </string>
+    <string name="title_notification">Notification: </string>
+    <string name="msg_empty_free_time">Please enter your free time !</string>
+    <string name="msg_error_choose_time">Please Choose Schedule</string>
+    <string name="label_notification">Open Notification</string>
+    <string name="label_cancel_notification">Cancel Notification</string>
+    <string name="title_notifi">Open the app now !</string>
+    <string name="lable_notifi">Try to be persistent !!!</string>
 </resources>

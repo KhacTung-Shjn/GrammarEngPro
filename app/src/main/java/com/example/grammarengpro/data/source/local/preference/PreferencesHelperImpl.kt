@@ -31,4 +31,40 @@ class PreferencesHelperImpl(private val sharedPreferences: SharedPreferences) : 
         }
         return listPoint
     }
+
+    override fun setListTimeChoose(itemsChooseTimeFree: MutableList<Int>) {
+        val dataJson = Gson().toJson(itemsChooseTimeFree)
+        sharedPreferences.edit().putString(Const.PREFS_LIST_TIME_CHOOSE, dataJson).apply()
+    }
+
+    override fun getListTimeChoose(): MutableList<Int> {
+        var listTimeChoose = mutableListOf<Int>()
+        val str = sharedPreferences.getString(Const.PREFS_LIST_TIME_CHOOSE, null)
+        if (!TextUtils.isEmpty(str)) {
+            val type = object : TypeToken<MutableList<Int>>() {}.type
+            listTimeChoose = Gson().fromJson(str, type)
+        }
+        return listTimeChoose
+    }
+
+    override fun setOpenNotification(isOpen: Boolean) {
+        sharedPreferences.edit().putBoolean(Const.PREFS_OPEN_NOTIFICATION, isOpen).apply()
+    }
+
+    override fun getOpenNotification(): Boolean =
+        sharedPreferences.getBoolean(Const.PREFS_OPEN_NOTIFICATION, false)
+
+    override fun setTimeChoose(string: String) {
+        sharedPreferences.edit().putString(Const.PREFS_TIME_CHOOSE, string).apply()
+    }
+
+    override fun getTimeChoose(): String =
+        sharedPreferences.getString(Const.PREFS_TIME_CHOOSE, ".....").toString()
+
+    override fun setCheckAlarm(str: String) {
+        sharedPreferences.edit().putString(Const.PREFS_CHECK_ALARM, str).apply()
+    }
+
+    override fun getCheckAlarm(): String =
+        sharedPreferences.getString(Const.PREFS_CHECK_ALARM, "").toString()
 }

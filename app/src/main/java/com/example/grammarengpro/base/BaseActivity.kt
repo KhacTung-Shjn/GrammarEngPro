@@ -8,6 +8,7 @@ import android.webkit.WebView
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.grammarengpro.MainApp
 import com.example.grammarengpro.utils.showToast
 
 abstract class BaseActivity : AppCompatActivity(), BaseView {
@@ -24,6 +25,19 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
 
     override fun showMessage(str: String) {
         baseContext.showToast(str)
+    }
+
+    override fun onResume() {
+        MainApp.setCurrentActivity(this)
+        super.onResume()
+    }
+
+    override fun onDestroy() {
+        val currentActivity = MainApp.getCurrentActivity()
+        if (this == currentActivity) {
+            MainApp.setCurrentActivity(null!!)
+        }
+        super.onDestroy()
     }
 
     @Synchronized

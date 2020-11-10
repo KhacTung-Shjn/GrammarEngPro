@@ -1,7 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_purple">
+    android:overScrollMode="never">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_16"
+        tools:ignore="HardcodedText">
+
+        <TextView
+            android:id="@+id/textScheduleFree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_schedule_free"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textT2"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_16"
+            android:background="@drawable/bg_text_view_schedule"
+            android:gravity="center"
+            android:text="T2"
+            app:layout_constraintEnd_toStartOf="@+id/textT3"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="@+id/textScheduleFree"
+            app:layout_constraintTop_toBottomOf="@+id/textScheduleFree" />
+
+        <TextView
+            android:id="@+id/textT3"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:background="@drawable/bg_text_view_schedule"
+            android:gravity="center"
+            android:text="T3"
+            app:layout_constraintBottom_toBottomOf="@+id/textT2"
+            app:layout_constraintEnd_toStartOf="@+id/textT4"
+            app:layout_constraintStart_toEndOf="@+id/textT2"
+            app:layout_constraintTop_toTopOf="@+id/textT2" />
+
+        <TextView
+            android:id="@+id/textT4"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:background="@drawable/bg_text_view_schedule"
+            android:gravity="center"
+            android:text="T4"
+            app:layout_constraintBottom_toBottomOf="@+id/textT3"
+            app:layout_constraintEnd_toStartOf="@+id/textT5"
+            app:layout_constraintStart_toEndOf="@+id/textT3"
+            app:layout_constraintTop_toTopOf="@+id/textT3" />
+
+        <TextView
+            android:id="@+id/textT5"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:background="@drawable/bg_text_view_schedule"
+            android:gravity="center"
+            android:text="T5"
+            app:layout_constraintBottom_toBottomOf="@+id/textT4"
+            app:layout_constraintEnd_toStartOf="@+id/textT6"
+            app:layout_constraintStart_toEndOf="@+id/textT4"
+            app:layout_constraintTop_toTopOf="@+id/textT4" />
+
+        <TextView
+            android:id="@+id/textT6"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:background="@drawable/bg_text_view_schedule"
+            android:gravity="center"
+            android:text="T6"
+            app:layout_constraintBottom_toBottomOf="@+id/textT5"
+            app:layout_constraintEnd_toStartOf="@+id/textT7"
+            app:layout_constraintStart_toEndOf="@+id/textT5"
+            app:layout_constraintTop_toTopOf="@+id/textT5" />
+
+        <TextView
+            android:id="@+id/textT7"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:background="@drawable/bg_text_view_schedule"
+            android:gravity="center"
+            android:text="T7"
+            app:layout_constraintBottom_toBottomOf="@+id/textT6"
+            app:layout_constraintEnd_toStartOf="@+id/textCN"
+            app:layout_constraintStart_toEndOf="@+id/textT6"
+            app:layout_constraintTop_toTopOf="@+id/textT6" />
+
+        <TextView
+            android:id="@+id/textCN"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:background="@drawable/bg_text_view_schedule"
+            android:gravity="center"
+            android:text="CN"
+            app:layout_constraintBottom_toBottomOf="@+id/textT7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textT7"
+            app:layout_constraintTop_toTopOf="@+id/textT7" />
+
+        <Button
+            android:id="@+id/buttonRecommend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:backgroundTint="@color/colorMain"
+            android:text="@string/label_recommend"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textCN" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvListSchedule"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:layout_marginTop="@dimen/dp_16"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonRecommend"
+            tools:listitem="@layout/item_list_schedule" />
+
+        <TextView
+            android:id="@+id/textChooseTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="@string/title_choose_time"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/textScheduleFree"
+            app:layout_constraintTop_toBottomOf="@+id/rcvListSchedule" />
+
+        <TextView
+            android:id="@+id/textTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:text="....."
+            android:textColor="@color/colorMain"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textChooseTime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textChooseTime" />
+
+        <Button
+            android:id="@+id/buttonNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:text="@string/label_notification"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textChooseTime" />
+
+        <Button
+            android:id="@+id/buttonCancelNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:text="@string/label_cancel_notification"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonNotification" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
