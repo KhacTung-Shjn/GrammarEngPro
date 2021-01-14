@@ -35,7 +35,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
     override fun onDestroy() {
         val currentActivity = MainApp.getCurrentActivity()
         if (this == currentActivity) {
-            MainApp.setCurrentActivity(null!!)
+            MainApp?.setCurrentActivity(null!!)
         }
         super.onDestroy()
     }

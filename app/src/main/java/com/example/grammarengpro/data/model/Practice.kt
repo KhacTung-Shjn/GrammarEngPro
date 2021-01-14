@@ -29,7 +29,7 @@ data class Practice(
 
     override fun describeContents() = 0
 
-    override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
+        override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
         writeString(idPractice)
         writeString(imageUrl)
         writeString(title)

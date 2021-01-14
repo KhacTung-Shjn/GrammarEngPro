@@ -48,7 +48,7 @@ class DetailPracticeAdapter :
         holder.textAnswerThree.isSelected = false
         holder.textAnswerFour.isSelected = false
 
-        val resultPosition = question.listAnswer!!.indexOf(question.result!!)
+        val resultPosition = question.listAnswer?.indexOf(question.result!!)
         var isCorrect = false
 
         holder.textAnswerOne.setOnClickListener {

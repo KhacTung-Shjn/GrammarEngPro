@@ -52,7 +52,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewTextTranslate"
         android:layout_width="0dp"
-        android:layout_height="@dimen/dp_200"
+        android:layout_height="280dp"
         android:layout_marginTop="@dimen/dp_16"
         app:cardCornerRadius="@dimen/dp_16"
         app:layout_constraintEnd_toEndOf="@+id/cardViewLanguage"
@@ -65,18 +65,21 @@
 
             <EditText
                 android:id="@+id/editTranslate"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:autofillHints="@null"
                 android:background="@null"
                 android:gravity="top"
                 android:hint="@string/hint_enter_word"
-                android:inputType="text"
-                android:padding="@dimen/dp_16"
+                android:inputType="textMultiLine"
+                android:maxLines="2000"
+                android:paddingStart="@dimen/dp_16"
+                android:paddingEnd="@dimen/dp_16"
+                android:paddingBottom="@dimen/dp_16"
                 app:layout_constraintBottom_toTopOf="@+id/textTranslate"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/imageDeleteAll" />
 
             <TextView
                 android:id="@+id/textTranslate"
@@ -91,6 +94,30 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageDeleteAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:contentDescription="@null"
+                android:padding="4dp"
+                android:src="@drawable/ic_baseline_close_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageMicro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@null"
+                android:padding="4dp"
+                android:src="@drawable/ic_microphone"
+                app:layout_constraintBottom_toBottomOf="@+id/imageDeleteAll"
+                app:layout_constraintEnd_toStartOf="@+id/imageDeleteAll"
+                app:layout_constraintTop_toTopOf="@+id/imageDeleteAll" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
@@ -108,12 +135,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/imageSpeak"
-                android:layout_width="@dimen/dp_30"
-                android:layout_height="@dimen/dp_30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp_10"
                 android:contentDescription="@null"
+                android:padding="8dp"
                 android:src="@drawable/ic_baseline_campaign_24"
                 android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"

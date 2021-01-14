@@ -15,7 +15,9 @@ import androidx.appcompat.app.AlertDialog
 import com.example.grammarengpro.R
 import com.example.grammarengpro.base.BaseFragment
 import com.example.grammarengpro.data.model.DetailExam
+import com.example.grammarengpro.utils.CommonUtils
 import com.example.grammarengpro.utils.Const
+import kotlinx.android.synthetic.main.dialog_result_practice.view.*
 import kotlinx.android.synthetic.main.fragment_detail_practice.*
 import java.util.*
 
@@ -27,6 +29,7 @@ class DetailPracticeFragment : BaseFragment(), DetailPracticeFragmentContact.Vie
     private var listExam: MutableList<DetailExam> = mutableListOf()
     private var point: Int = 0
     private var dialogExit: AlertDialog? = null
+    private var dialogResult: AlertDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,11 +79,42 @@ class DetailPracticeFragment : BaseFragment(), DetailPracticeFragmentContact.Vie
         if (position < this.listExam.size)
             rcvListQuestion.scrollToPosition(position + 1)
         if (position == this.listExam.size - 1) {
-            val intent = Intent()
-            intent.putExtra(Const.KEY_ID_PRACTICE, idPractice)
-            intent.putExtra(Const.KEY_POINT_PRACTICE, point)
-            activity?.setResult(Activity.RESULT_OK, intent)
-            activity?.finish()
+
+            if (activity != null && context != null) {
+                val builder = AlertDialog.Builder(context!!)
+                val mView = layoutInflater.inflate(R.layout.dialog_result_practice, null)
+                builder.setView(mView)
+                dialogResult = builder.create()
+                Objects.requireNonNull(dialogResult!!.window)
+                    ?.setBackgroundDrawable(
+                        ColorDrawable(Color.TRANSPARENT)
+                    )
+
+                when {
+                    point >= 15 -> {
+                        mView.imageResult.setBackgroundResource(R.drawable.ic_tot)
+                    }
+                    point in 10..14 -> {
+                        mView.imageResult.setBackgroundResource(R.drawable.ic_trungbinh)
+                    }
+                    else -> {
+                        mView.imageResult.setBackgroundResource(R.drawable.ic_sad)
+                    }
+                }
+
+                mView.tvTitleResult.text = "$point / 20"
+
+                mView.btnCancel.setOnClickListener {
+                    val intent = Intent()
+                    intent.putExtra(Const.KEY_ID_PRACTICE, idPractice)
+                    intent.putExtra(Const.KEY_POINT_PRACTICE, point)
+                    activity?.setResult(Activity.RESULT_OK, intent)
+                    activity?.finish()
+                }
+
+                dialogResult?.setCancelable(true)
+                dialogResult?.show()
+            }
         }
     }
 
@@ -107,9 +141,8 @@ class DetailPracticeFragment : BaseFragment(), DetailPracticeFragmentContact.Vie
 
     override fun onDetach() {
         super.onDetach()
-        dialogExit?.let {
-            it.dismiss()
-        }
+        dialogExit?.dismiss()
+        dialogResult?.dismiss()
     }
 
     companion object {
@@ -125,6 +158,13 @@ class DetailPracticeFragment : BaseFragment(), DetailPracticeFragmentContact.Vie
             instance!!.arguments = bundle
             return instance!!
         }
+
+        const val TB =
+            "https://png.pngtree.com/png-clipart/20190705/original/pngtree-a-girl-who-studies-hard-png-image_4286284.jpg"
+        const val T =
+            "https://amy.edu.vn/wp-content/uploads/2019/06/42434636-red-yellow-congratulations-text-and-fireworks-abstract-vector.jpg"
+        const val K =
+            "https://png.pngtree.com/png-clipart/20190611/original/pngtree-sad-student-illustration-png-image_2958464.jpg"
     }
 
 }
