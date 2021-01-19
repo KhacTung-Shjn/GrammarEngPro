@@ -38,5 +38,4 @@ class MainApp : Application() {
             return null!!
         }
     }
-
 }
